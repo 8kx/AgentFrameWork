@@ -1,5 +1,5 @@
 # AgentFrameWork Skill Installer - Windows (PowerShell)
-# Installs personal skills to ~/.cursor/skills/ so they are available in all projects
+# Installs personal skills to ~/.cursor/skills/ and records the local framework path.
 #
 # Usage: from the AgentFrameWork repo root, run:
 #   .\scripts\install.ps1
@@ -7,19 +7,26 @@
 $ErrorActionPreference = "Stop"
 
 $repoRoot = Split-Path -Parent $PSScriptRoot
-$cursorSkillsDir = Join-Path $env:USERPROFILE ".cursor\skills"
+$cursorDir = Join-Path $env:USERPROFILE ".cursor"
+$cursorSkillsDir = Join-Path $cursorDir "skills"
 $skillsSource = Join-Path $repoRoot ".cursor\skills"
+$pathFile = Join-Path $cursorDir "agentframework.path"
 
 Write-Host "AgentFrameWork Skill Installer" -ForegroundColor Cyan
-Write-Host "Source:      $skillsSource"
-Write-Host "Destination: $cursorSkillsDir"
+Write-Host "Repo:        $repoRoot"
+Write-Host "Skills to:   $cursorSkillsDir"
 Write-Host ""
 
+# Create ~/.cursor/skills if it doesn't exist
 if (-not (Test-Path $cursorSkillsDir)) {
     New-Item -ItemType Directory -Path $cursorSkillsDir -Force | Out-Null
-    Write-Host "Created $cursorSkillsDir" -ForegroundColor Green
 }
 
+# Write the local framework path so skills can read files directly
+$repoRoot | Set-Content -Path $pathFile -Encoding UTF8
+Write-Host "Framework path recorded: $pathFile" -ForegroundColor Green
+
+# Install each skill
 $skills = Get-ChildItem -Path $skillsSource -Directory
 $installed = 0
 
@@ -27,7 +34,7 @@ foreach ($skill in $skills) {
     $dest = Join-Path $cursorSkillsDir $skill.Name
 
     if (Test-Path $dest) {
-        Write-Host "  [$($skill.Name)] already exists - updating..." -ForegroundColor Yellow
+        Write-Host "  [$($skill.Name)] updating..." -ForegroundColor Yellow
         Remove-Item -Recurse -Force $dest
     }
 
@@ -37,10 +44,10 @@ foreach ($skill in $skills) {
 }
 
 Write-Host ""
-Write-Host "Done. $installed skill(s) installed to $cursorSkillsDir" -ForegroundColor Cyan
+Write-Host "Done. $installed skill(s) installed." -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Available trigger phrases:"
 Write-Host "  'init framework'    - bootstrap AgentFrameWork into any project"
 Write-Host "  'upgrade framework' - audit and upgrade an existing project"
 Write-Host ""
-Write-Host "Re-run this script after pulling updates to keep skills current."
+Write-Host "Re-run after pulling updates to keep skills current."
