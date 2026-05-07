@@ -40,6 +40,7 @@
 | `security/` | `_INDEX.md` present; `secrets-management.md` present |
 | `git/` | `_INDEX.md` present; `commit-conventions.md` present |
 | `documentation/` | `_INDEX.md` present; `doc-update-protocol.md` present |
+| `planning/` | `_INDEX.md` present; `stages.md` present |
 
 ## Layer 3: Documentation Health
 

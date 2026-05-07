@@ -32,7 +32,8 @@ FRAMEWORK.mdc  (you are here — Layer 0)
     ├── agents/         → [_INDEX.md](../../systems/agents/_INDEX.md)
     ├── tracker/        → [_INDEX.md](../../systems/tracker/_INDEX.md)
     ├── learnings/      → [_INDEX.md](../../systems/learnings/_INDEX.md)
-    └── tools/          → [_INDEX.md](../../systems/tools/_INDEX.md)
+    ├── tools/          → [_INDEX.md](../../systems/tools/_INDEX.md)
+    └── planning/       → [_INDEX.md](../../systems/planning/_INDEX.md)
 └── scaffold/           → [_INDEX.md](../../scaffold/_INDEX.md)
 ```
 
@@ -124,6 +125,10 @@ Before any commit-related action, consult [`systems/git/_INDEX.md`](../../system
 | `"init framework"` / `"bootstrap project"` | Run init-framework skill |
 | `"upgrade framework"` / `"audit framework"` | Run upgrade-framework skill |
 | `"what's next"` / `"project status"` | Read `ACTIVE.md` → summarise state + suggest next action |
+| `"concept [feature]"` / `"create a concept doc"` | Read planning/_INDEX.md → generate concept-doc.md from template for review |
+| `"project brief"` / `"write a brief"` | Generate project-brief.md from template |
+| `"technical approach"` / `"design the approach"` | Generate technical-approach.md from template |
+| `"stage review"` / `"what stage are we in"` | Read ACTIVE.md → report current stage + gate status |
 | Building any UI | Read `systems/design/visual-system.md` and `systems/design/tokens.md` first |
 | Adding a dependency | Check `systems/architecture/dependencies.md` before deciding |
 | Anything security-related | Read `systems/security/_INDEX.md` first |
@@ -136,7 +141,7 @@ Before any commit-related action, consult [`systems/git/_INDEX.md`](../../system
 version:       1.0.0
 created:       2026-05-07
 last-updated:  2026-05-07
-subsystems:    11
+subsystems:    12
 skills:        init-framework, upgrade-framework
 export:        .cursor/skills/init-framework/SKILL.md
 bootstrap:     BOOTSTRAP.mdc (GitHub raw URL fallback)
