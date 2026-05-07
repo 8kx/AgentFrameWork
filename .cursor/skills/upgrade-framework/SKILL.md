@@ -79,6 +79,4 @@ Project is now at framework v[version].
 ```
 
 ## Framework Repo Base URL
-`https://raw.githubusercontent.com/[owner]/AgentFrameWork/main`
-
-Update `[owner]` to the actual GitHub username after repo is created.
+`https://raw.githubusercontent.com/8kx/AgentFrameWork/main`

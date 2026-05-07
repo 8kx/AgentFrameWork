@@ -14,7 +14,7 @@ Bootstrap the AgentFrameWork into the current project. Idempotent — safe to ru
    - If present but older version → suggest running `upgrade framework` instead
 
 2. **Create `.cursor/rules/FRAMEWORK.mdc`**
-   Copy from: `https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/.cursor/rules/FRAMEWORK.mdc`
+   Copy from: `https://raw.githubusercontent.com/8kx/AgentFrameWork/main/.cursor/rules/FRAMEWORK.mdc`
    Stamp with:
    ```
    last-updated: [today's date]
@@ -61,6 +61,4 @@ Bootstrap the AgentFrameWork into the current project. Idempotent — safe to ru
    ```
 
 ## Framework Repo Base URL
-`https://raw.githubusercontent.com/[owner]/AgentFrameWork/main`
-
-Update `[owner]` to the actual GitHub username after repo is created.
+`https://raw.githubusercontent.com/8kx/AgentFrameWork/main`

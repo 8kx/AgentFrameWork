@@ -10,33 +10,38 @@ You have fetched the AgentFrameWork bootstrap file. Follow these steps to initia
 
 This file instructs you to fetch and install the core framework files from GitHub into the current project. Once complete, the project will have the full AgentFrameWork structure and you can work normally.
 
+## Base URL
+
+All files are fetched from:
+`https://raw.githubusercontent.com/8kx/AgentFrameWork/main/`
+
 ## Steps
 
 1. **Fetch FRAMEWORK.mdc**
    Download from:
    ```
-   https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/.cursor/rules/FRAMEWORK.mdc
+   https://raw.githubusercontent.com/8kx/AgentFrameWork/main/.cursor/rules/FRAMEWORK.mdc
    ```
    Save to: `.cursor/rules/FRAMEWORK.mdc`
 
 2. **Fetch the key always-loaded files**
    Download and save to their corresponding paths:
    ```
-   https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/systems/tracker/ACTIVE.md
-   → systems/tracker/ACTIVE.md
+   https://raw.githubusercontent.com/8kx/AgentFrameWork/main/systems/tracker/ACTIVE.md
+   -> systems/tracker/ACTIVE.md
 
-   https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/systems/learnings/INSIGHTS.md
-   → systems/learnings/INSIGHTS.md
+   https://raw.githubusercontent.com/8kx/AgentFrameWork/main/systems/learnings/INSIGHTS.md
+   -> systems/learnings/INSIGHTS.md
 
-   https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/systems/tracker/tracking-protocol.md
-   → systems/tracker/tracking-protocol.md
+   https://raw.githubusercontent.com/8kx/AgentFrameWork/main/systems/tracker/tracking-protocol.md
+   -> systems/tracker/tracking-protocol.md
 
-   https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/systems/learnings/learning-protocol.md
-   → systems/learnings/learning-protocol.md
+   https://raw.githubusercontent.com/8kx/AgentFrameWork/main/systems/learnings/learning-protocol.md
+   -> systems/learnings/learning-protocol.md
    ```
 
 3. **Fetch subsystem INDEX files**
-   Download each `_INDEX.md` for the subsystems you need:
+   Download each `_INDEX.md` using base URL above:
    ```
    systems/coding/_INDEX.md
    systems/design/_INDEX.md
@@ -51,7 +56,6 @@ This file instructs you to fetch and install the core framework files from GitHu
    scaffold/upgrade-checklist.md
    scaffold/onboarding-path.md
    ```
-   Base URL: `https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/`
 
 4. **Update ACTIVE.md**
    Set the "Current Focus" to the current project name and "Project initialisation" as the goal.
@@ -66,13 +70,13 @@ This file instructs you to fetch and install the core framework files from GitHu
 
 - Individual subsystem files (e.g. `best-practices.md`) are fetched on demand as tasks require them
 - You do not need to download the entire framework upfront
-- Full content files are at: `https://raw.githubusercontent.com/[owner]/AgentFrameWork/main/systems/[subsystem]/[file].md`
+- Full content files are at: `https://raw.githubusercontent.com/8kx/AgentFrameWork/main/systems/[subsystem]/[file].md`
 
 ## On a Personal Machine?
 
 Install the skills once so you never need this file again:
 ```powershell
-# Windows — from the AgentFrameWork repo root
+# Windows - from the AgentFrameWork repo root
 .\scripts\install.ps1
 ```
 ```bash
@@ -81,6 +85,3 @@ bash scripts/install.sh
 ```
 
 Then use: `"init framework"` in any project.
-
----
-*Replace `[owner]` with the actual GitHub username/org after the repo is published.*
