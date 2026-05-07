@@ -146,4 +146,9 @@ skills:        init-framework, upgrade-framework
 export:        .cursor/skills/init-framework/SKILL.md
 bootstrap:     BOOTSTRAP.mdc (GitHub raw URL fallback)
 changelog:     CHANGELOG.md
+project-id:    af-001
+project-name:  AgentFrameWork
+registry:      ~/.cursor/project-registry.md
 ```
+
+> `project-id` is a stable identifier used by the future root agent to refer to this project across sessions and devices. Format: `af-NNN`. Assigned at init time, never changes.

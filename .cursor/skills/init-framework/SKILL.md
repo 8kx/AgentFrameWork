@@ -64,13 +64,40 @@ Ask: "Want to run through the new project checklist now? (yes/skip)"
 
 If yes: read `scaffold/new-project-checklist.md` from source and walk through Phase 1 (Repository Setup) interactively, checking each item against what already exists in the project.
 
-### 8. Report completion
+### 8. Assign project-id and register
+
+Read `~/.cursor/project-registry.md` if it exists. Count existing entries to determine the next ID number (format: `af-NNN`, e.g. `af-002`). If no registry exists, this project is `af-001`.
+
+Add a row to `~/.cursor/project-registry.md`:
+```
+| [id] | [project folder name] | [absolute path] | Active | [today] |
+```
+
+Create the registry file if it doesn't exist:
+```markdown
+# Project Registry
+
+Maintained by init-framework skill. Read by the future root agent for cross-project navigation.
+
+| ID | Name | Path | Status | Last Active |
+|----|------|------|--------|------------|
+```
+
+Stamp the project-id and project-name into the project's `FRAMEWORK.mdc` metadata block:
+```
+project-id:    [assigned id]
+project-name:  [folder name]
+registry:      ~/.cursor/project-registry.md
+```
+
+### 9. Report completion
 ```
 Framework initialised at v[version]. (source: [local|github|embedded])
   .cursor/rules/FRAMEWORK.mdc
   systems/ skeleton (N subsystems)
   systems/tracker/ACTIVE.md
   systems/learnings/INSIGHTS.md
+  project-id: [id] — registered in ~/.cursor/project-registry.md
 
 Say "what's next" to get started, or "tools review" to find relevant tools for this project.
 ```

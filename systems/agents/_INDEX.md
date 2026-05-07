@@ -10,6 +10,7 @@ Governs how to work effectively with AI agents — prompting strategy, context e
 |------|---------|
 | [prompting-framework.md](prompting-framework.md) | How to write prompts that produce good results |
 | [workflows.md](workflows.md) | Common agent workflow patterns for coding tasks |
+| [root-agent.md](root-agent.md) | Future root agent design — cross-project navigation and orchestration |
 
 ## When to Load This Subsystem
 
