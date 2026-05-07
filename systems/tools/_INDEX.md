@@ -9,6 +9,7 @@ The inventory and management layer for everything that extends the agent's capab
 | File/Folder | Purpose |
 |------------|---------|
 | [tools-protocol.md](tools-protocol.md) | How tools are discovered, added, documented, and retired |
+| [tools-discovery-protocol.md](tools-discovery-protocol.md) | Project tools review — searches for relevant tools and workflow improvements |
 | [skills/_INDEX.md](skills/_INDEX.md) | Skills subsystem — registry and protocol |
 | [skills/registry.md](skills/registry.md) | Master list of all skills |
 | [skills/skills-protocol.md](skills/skills-protocol.md) | How to create and manage skills |

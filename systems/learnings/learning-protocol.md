@@ -99,5 +99,30 @@ Triggered by: `"compile learnings"`, `"learning review"`, `"what have I learned"
 [2-3 open questions about direction, workflow, or priorities]
 ```
 
+## Routing Tool-Related Insights
+
+When passive capture produces a `friction:` or `question:` entry that relates to tooling or workflow efficiency:
+- Log it as normal in the raw log
+- Add a `[tool?]` tag at the end of the line
+
+Example:
+```
+[16:45] friction: manually re-explaining project context every session [tool?] | agents/context
+[17:12] question: is there an MCP server for Figma yet? [tool?] | systems/design
+```
+
+The `[tool?]` tag signals that a tools review might address this. When a tools review runs, it scans INSIGHTS.md for `[tool?]` entries and prioritises them. This creates a direct feedback loop:
+
+```
+Friction noticed during work
+    -> tagged [tool?] in raw log + INSIGHTS.md
+    -> tools review reads INSIGHTS.md
+    -> searches for tools that address that friction
+    -> recommends download, build, or workflow change
+    -> adopted insight flows back into INSIGHTS.md (without [tool?] tag)
+```
+
+See: [systems/tools/tools-discovery-protocol.md](../tools/tools-discovery-protocol.md)
+
 ## Last Updated
 2026-05-07

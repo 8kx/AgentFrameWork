@@ -100,6 +100,8 @@ Before any commit-related action, consult [`systems/git/_INDEX.md`](../../system
 | `"compile log"` / `"what have I done"` | Read tracker raw logs since last compile → generate weekly summary |
 | `"compile learnings"` / `"learning review"` | Read learnings raw logs + research → generate digest, ask about adoptions |
 | `"search for [topic]"` / `"what's new in [topic]"` | Web search → save to `systems/learnings/research/` → summarise findings |
+| `"tools review"` / `"what tools could help"` / `"optimize my workflow"` | Read project context + INSIGHTS → web search tools/MCP/skills → cross-reference registry → produce recommendations report |
+| `"find tools for [topic]"` / `"are there MCP servers for [topic]"` | Targeted tools discovery search for a specific domain |
 | `"init framework"` / `"bootstrap project"` | Run init-framework skill |
 | `"upgrade framework"` / `"audit framework"` | Run upgrade-framework skill |
 | `"what's next"` / `"project status"` | Read `ACTIVE.md` → summarise state + suggest next action |
