@@ -82,13 +82,32 @@ When you notice a pattern, a better approach, or friction in the workflow, appen
 
 Full protocol: [`systems/learnings/learning-protocol.md`](../../systems/learnings/learning-protocol.md)
 
-### 5. Token Efficiency
+### 5. Periodic Compile Nudges
+
+At the start of each session, after reading `ACTIVE.md` and `INSIGHTS.md`, check the "Last Compiled" dates in both files against today's date.
+
+**Rules:**
+
+| Condition | Action |
+|-----------|--------|
+| Tracker last compiled > 7 days ago | Nudge: "It's been X days since your last log compile. Say **compile log** when you're ready." |
+| Learnings last compiled > 7 days ago | Nudge: "Your learnings haven't been reviewed in X days. Say **compile learnings** when you want a digest." |
+| Both overdue | Combine into one nudge, one line each |
+| Never compiled | Nudge: "You haven't compiled your [tracker/learnings] yet. Say **compile log** or **compile learnings** to generate your first summary." |
+
+**Delivery rules:**
+- One nudge per session maximum — do not repeat on every message
+- Deliver it as a single short note at the end of the first substantive response, not as a separate message
+- Keep it to 1-2 lines — it is a reminder, not a prompt to act immediately
+- Never nudge if the user is mid-task and asked a specific question; wait until a natural pause
+
+### 7. Token Efficiency
 - Load subsystem files on demand, not preemptively
 - `ACTIVE.md` and `INSIGHTS.md` are the only files that travel in context by default
 - Never load full log files unless the user requests a compile or summary
 - When a file is no longer relevant to the current task, let it drop from context
 
-### 6. Git Hygiene
+### 8. Git Hygiene
 Before any commit-related action, consult [`systems/git/_INDEX.md`](../../systems/git/_INDEX.md) for conventions. Never commit without a meaningful message. Never commit secrets.
 
 ---
