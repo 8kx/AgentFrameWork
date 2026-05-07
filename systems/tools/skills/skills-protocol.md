@@ -6,10 +6,26 @@
 
 ```
 skill-name/
-├── SKILL.md          # Required — main instructions (keep under 500 lines)
+├── SKILL.md          # Required — instructions (keep under 500 lines)
 ├── reference.md      # Optional — detailed docs the agent reads on demand
-└── scripts/          # Optional — utility scripts the skill uses
+└── scripts/          # Optional — executable tools the skill uses
+    ├── tool.py       # Python tool scripts
+    ├── tool.sh       # Shell scripts
+    └── tool.ps1      # PowerShell scripts
 ```
+
+### SKILL.md + Scripts: The Two-File Pattern
+
+This mirrors the pattern described by Anthropic's own internal tooling:
+- **SKILL.md** = the agent's instructions (what to do, how to think about it)
+- **scripts/** = the actual executable tools (what to run, what to call)
+
+The agent reads SKILL.md for instructions, then executes scripts as needed. This separation keeps instructions readable and tools reliable. A script that does one thing repeatably is more dependable than asking the agent to generate the same code each time.
+
+When to add a script:
+- The task involves a repeatable operation (file transformation, API call, data parse)
+- Consistency matters more than flexibility
+- The operation is fragile enough that generated code would vary dangerously
 
 ## SKILL.md Requirements
 

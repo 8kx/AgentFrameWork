@@ -1,10 +1,22 @@
 # AgentFrameWork
 
+> "The secret tool sitting on your computer right now is simply your file system."
+
 A hierarchical, self-maintaining agent framework for AI-assisted coding projects. Stack-agnostic. Designed to scaffold any project and keep itself up to date.
+
+## The Core Idea
+
+The biggest problem in working with AI is the **Context Wall** — getting an AI to reliably remember your data, tools, processes, and preferences without hallucinating or forgetting between sessions.
+
+The solution isn't complex agentic infrastructure. It's folders and markdown files.
+
+This framework organises everything an agent needs to know — coding standards, design system, project state, past learnings, available tools — into a structured folder hierarchy. One agent reads it all. When a task needs specialisation, the agent reads the relevant subsystem and operates as a specialist for that task. No expensive tooling. No separate agent per task.
+
+**One agent. Many skills. All from your file system.**
 
 ## What This Is
 
-A tree of knowledge rooted in a single `FRAMEWORK.mdc` that the AI agent reads on every session. From there, 11 subsystems cover everything from coding conventions to deployment philosophy to project tracking and personal learning.
+A tree of knowledge rooted in a single `FRAMEWORK.mdc` that the AI agent reads on every session. From there, 12 subsystems cover everything from coding conventions to deployment philosophy, project planning, tracking, and personal learning.
 
 The framework dogfoods itself — this repo uses its own framework while being built.
 

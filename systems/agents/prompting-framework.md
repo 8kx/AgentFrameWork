@@ -2,6 +2,24 @@
 
 ← [Agents _INDEX.md](_INDEX.md) ← [FRAMEWORK.mdc](../../.cursor/rules/FRAMEWORK.mdc)
 
+## The Mental Model: One Agent, Many Skills
+
+The "Context Wall" is the core problem in AI-assisted work — getting the agent to reliably know your context, tools, and preferences without expensive infrastructure or constant re-explanation.
+
+The solution is the file system. Organised folders and markdown files let a single agent specialise on the fly:
+
+```
+Agent reads FRAMEWORK.mdc
+    → task involves UI → reads systems/design/
+    → task involves auth → reads systems/security/
+    → task needs a tool → reads systems/tools/
+    → planning something → reads systems/planning/
+```
+
+No separate agent per domain. No complex orchestration. The agent is already capable — you just need to give it well-organised context to read.
+
+This means: **the quality of your framework files directly determines the quality of your agent's output.** Keep them current. Keep them concise.
+
 ## The Core Principle: Context Engineering
 
 The gap between effective and ineffective AI use is not prompting skill — it is how you engineer context. The goal is the *smallest high-signal set of information* that enables the agent to act correctly.
