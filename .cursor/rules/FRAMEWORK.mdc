@@ -1,0 +1,123 @@
+---
+description: Root agent framework — read this first on every session. Governs all behaviour, doc hygiene, security, and subsystem navigation.
+alwaysApply: true
+framework-version: 1.0.0
+last-updated: 2026-05-07
+---
+
+# Agent Framework — Root
+
+You are operating within a structured, self-maintaining agent framework. This file is your operating manual. Read it fully at the start of every session.
+
+## Identity
+
+This framework is stack-agnostic. It applies to every coding project regardless of language or platform. Project-specific overrides live in the project's own `.cursor/rules/` alongside this file.
+
+---
+
+## Hierarchy
+
+The framework is a tree. Every file links to its parent. Navigate by need — do not load the full tree into context at once.
+
+```
+FRAMEWORK.mdc  (you are here — Layer 0)
+└── systems/
+    ├── coding/         → [_INDEX.md](../../systems/coding/_INDEX.md)
+    ├── design/         → [_INDEX.md](../../systems/design/_INDEX.md)
+    ├── architecture/   → [_INDEX.md](../../systems/architecture/_INDEX.md)
+    ├── security/       → [_INDEX.md](../../systems/security/_INDEX.md)
+    ├── git/            → [_INDEX.md](../../systems/git/_INDEX.md)
+    ├── deployment/     → [_INDEX.md](../../systems/deployment/_INDEX.md)
+    ├── documentation/  → [_INDEX.md](../../systems/documentation/_INDEX.md)
+    ├── agents/         → [_INDEX.md](../../systems/agents/_INDEX.md)
+    ├── tracker/        → [_INDEX.md](../../systems/tracker/_INDEX.md)
+    ├── learnings/      → [_INDEX.md](../../systems/learnings/_INDEX.md)
+    └── tools/          → [_INDEX.md](../../systems/tools/_INDEX.md)
+└── scaffold/           → [_INDEX.md](../../scaffold/_INDEX.md)
+```
+
+**Navigation rule:** When a task touches a subsystem, read that subsystem's `_INDEX.md` first. Drill deeper only if the specific file is needed.
+
+---
+
+## Always-Loaded Context
+
+These two files are always small and always relevant. Read them at session start:
+
+- [`systems/tracker/ACTIVE.md`](../../systems/tracker/ACTIVE.md) — current project state, active goals, last 3 actions
+- [`systems/learnings/INSIGHTS.md`](../../systems/learnings/INSIGHTS.md) — top working insights about this project and how to work well in it
+
+---
+
+## Core Mandates
+
+### 1. Living Documentation
+Every code change triggers a documentation cascade:
+1. Check for a corresponding `.md` doc at the same path level
+2. If none → create one from template ([module-doc.md](../../systems/documentation/templates/module-doc.md)), register it in the nearest `_INDEX.md`
+3. If the parent `_INDEX.md` doesn't exist → create it, register in grandparent
+4. Bubble up until `FRAMEWORK.mdc` is aware of the new area
+5. Update `Last Updated` on every touched file
+
+Full protocol: [`systems/documentation/doc-update-protocol.md`](../../systems/documentation/doc-update-protocol.md)
+
+### 2. Security — Non-Negotiable
+Before writing any file:
+- Never write secrets, API keys, tokens, or passwords into source files
+- Never suggest committing `.env` files or credential files
+- Check [`systems/security/what-never-commits.md`](../../systems/security/what-never-commits.md) when in doubt
+- If a task requires a secret, use environment variable references only: `process.env.KEY`, `os.environ["KEY"]`
+
+### 3. Silent Tracking
+After every significant action, append one line to `systems/tracker/log/raw/YYYY-MM-DD.md`:
+```
+[HH:MM] <action> | <area> | <outcome>
+```
+Then update the "Last 3" block in `systems/tracker/ACTIVE.md`. Do not narrate this to the user.
+
+Full protocol: [`systems/tracker/tracking-protocol.md`](../../systems/tracker/tracking-protocol.md)
+
+### 4. Silent Learning Capture
+When you notice a pattern, a better approach, or friction in the workflow, append one line to `systems/learnings/log/raw/YYYY-MM-DD.md`. Do not narrate this to the user.
+
+Full protocol: [`systems/learnings/learning-protocol.md`](../../systems/learnings/learning-protocol.md)
+
+### 5. Token Efficiency
+- Load subsystem files on demand, not preemptively
+- `ACTIVE.md` and `INSIGHTS.md` are the only files that travel in context by default
+- Never load full log files unless the user requests a compile or summary
+- When a file is no longer relevant to the current task, let it drop from context
+
+### 6. Git Hygiene
+Before any commit-related action, consult [`systems/git/_INDEX.md`](../../systems/git/_INDEX.md) for conventions. Never commit without a meaningful message. Never commit secrets.
+
+---
+
+## Trigger Map
+
+| User says | Agent does |
+|-----------|------------|
+| `"compile log"` / `"what have I done"` | Read tracker raw logs since last compile → generate weekly summary |
+| `"compile learnings"` / `"learning review"` | Read learnings raw logs + research → generate digest, ask about adoptions |
+| `"search for [topic]"` / `"what's new in [topic]"` | Web search → save to `systems/learnings/research/` → summarise findings |
+| `"init framework"` / `"bootstrap project"` | Run init-framework skill |
+| `"upgrade framework"` / `"audit framework"` | Run upgrade-framework skill |
+| `"what's next"` / `"project status"` | Read `ACTIVE.md` → summarise state + suggest next action |
+| Building any UI | Read `systems/design/visual-system.md` and `systems/design/tokens.md` first |
+| Adding a dependency | Check `systems/architecture/dependencies.md` before deciding |
+| Anything security-related | Read `systems/security/_INDEX.md` first |
+
+---
+
+## Framework Metadata
+
+```
+version:       1.0.0
+created:       2026-05-07
+last-updated:  2026-05-07
+subsystems:    11
+skills:        init-framework, upgrade-framework
+export:        .cursor/skills/init-framework/SKILL.md
+bootstrap:     BOOTSTRAP.mdc (GitHub raw URL fallback)
+changelog:     CHANGELOG.md
+```
