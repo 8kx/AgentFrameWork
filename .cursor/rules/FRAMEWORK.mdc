@@ -1,8 +1,8 @@
 ---
 description: Root agent framework — read this first on every session. Governs all behaviour, doc hygiene, security, and subsystem navigation.
 alwaysApply: true
-framework-version: 1.0.0
-last-updated: 2026-05-07
+framework-version: 1.1.0
+last-updated: 2026-05-10
 ---
 
 # Agent Framework — Root
@@ -76,6 +76,8 @@ After every significant action, append one line to `systems/tracker/log/raw/YYYY
 ```
 Then update the "Last 3" block in `systems/tracker/ACTIVE.md`. Do not narrate this to the user.
 
+For multi-step tasks: maintain a `## Current Task` block in `ACTIVE.md` with sub-step checkboxes. Check each step off **immediately** when done — not at end of session. This is the live resume point for any agent picking up mid-task.
+
 Full protocol: [`systems/tracker/tracking-protocol.md`](../../systems/tracker/tracking-protocol.md)
 
 ### 4. Silent Learning Capture
@@ -138,9 +140,9 @@ Before any commit-related action, consult [`systems/git/_INDEX.md`](../../system
 ## Framework Metadata
 
 ```
-version:       1.0.0
+version:       1.1.0
 created:       2026-05-07
-last-updated:  2026-05-07
+last-updated:  2026-05-10
 subsystems:    12
 skills:        init-framework, upgrade-framework
 export:        .cursor/skills/init-framework/SKILL.md

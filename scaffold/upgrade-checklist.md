@@ -55,6 +55,8 @@
 | Check | Pass condition |
 |-------|---------------|
 | `ACTIVE.md` has been updated recently | `Last 3 Actions` date within 7 days (if project is active) |
+| `ACTIVE.md` under line limit | File is 25 lines or fewer |
+| Current Task block present when goal is in-progress | If any goal is marked `[~]`, a `## Current Task` block with sub-step checkboxes exists |
 | At least one compiled log exists | `log/compiled/` has at least one file |
 
 ## Exceptions
@@ -70,4 +72,4 @@ exceptions:
 The upgrade skill reads exceptions and skips those checks with a note.
 
 ## Last Updated
-2026-05-07
+2026-05-10

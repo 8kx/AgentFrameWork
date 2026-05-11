@@ -47,4 +47,31 @@ Run `init framework` in any project to bootstrap, or use `BOOTSTRAP.mdc` fallbac
 
 ---
 
+## [1.1.0] — 2026-05-10
+
+### Added
+
+- **Current Task block** (`systems/tracker/tracking-protocol.md`) — when a goal has `[~]` status, agents must maintain a `## Current Task` block in `ACTIVE.md` with explicit sub-step checkboxes. Each step is checked off in real-time, not batched at end of session. This block is the live resume point for any agent or session picking up mid-task.
+
+### Changed
+
+- `ACTIVE.md` line limit raised from 20 to 25 to accommodate the Current Task block
+- `FRAMEWORK.mdc` Mandate 3 (Silent Tracking) expanded to include Current Task real-time update requirement
+- `scaffold/upgrade-checklist.md` Layer 4 — added checks for ACTIVE.md line limit and Current Task block presence when a `[~]` goal exists
+
+### Why
+
+A free-text "Resume Point" block goes stale within minutes of starting a multi-step task. Without sub-task checkboxes checked off in real-time, a second agent or returning session sees completed steps as still pending and either repeats work or mis-states project status. Discovered in practice on the kitchen-brain project (2026-05-10).
+
+---
+
+### Upgrade Guide: 1.0.0 → 1.1.0
+
+1. In `FRAMEWORK.mdc`, bump `framework-version` to `1.1.0`
+2. In `systems/tracker/tracking-protocol.md`, add the Current Task block rules (or pull from the framework source)
+3. In `systems/tracker/ACTIVE.md`, update the header comment to mention the Current Task block and raise the line limit to 25
+4. Replace any free-text `## Resume Point` section with a `## Current Task` block using sub-step checkboxes
+
+---
+
 *Next release notes will appear above this line.*

@@ -2,7 +2,8 @@
 
 ← [Tracker _INDEX.md](_INDEX.md) ← [FRAMEWORK.mdc](../../.cursor/rules/FRAMEWORK.mdc)
 
-> This file is always loaded in context. Keep it under 20 lines. Agent updates it silently.
+> This file is always loaded in context. Keep it under 25 lines. Agent updates it silently after every significant action.
+> When a goal has `[~]` status, add a `## Current Task` block with sub-step checkboxes — check each off in real-time.
 
 ## Current Focus
 Building the AgentFrameWork — initial framework scaffold and self-application.
